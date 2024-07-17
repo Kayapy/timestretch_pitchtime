@@ -54,7 +54,7 @@ if uploaded_file is not None:
 
     rate=st.slider("Time Stretch (rate)", 0.5, 2.0, 1.0, step=0.1)
 
-    if st.button("Aplicar Time Stretch"):
+    if st.button("Aplicar Pitch Time"):
         try:
             waveform_stretched=aplicar_time_stretch(waveform, sample_rate, rate)
             # Salvar o áudio processado temporariamente em um buffer de memória
