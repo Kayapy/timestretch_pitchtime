@@ -41,7 +41,7 @@ def set_jpeg_as_page_bg(jpeg_file):
 
 
 # Definir a imagem de fundo (substitua 'background.jpg' pelo caminho do seu arquivo JPEG)
-set_jpeg_as_page_bg('/workspaces/timestretch_pitchshift/backgroundapp.jpg')
+set_jpeg_as_page_bg('backgroundapp2.jpg')
 
 # Conteúdo do aplicativo Streamlit
 st.title("Time Stretch + Pitch Time")
@@ -67,6 +67,11 @@ if uploaded_file is not None:
     # Botões de controle de reprodução para o áudio original
     if st.button("Play Original"):
         st.audio(uploaded_file, format='audio/wav', start_time=0)
+
+    # Botões de controle de reprodução para o áudio processado
+    if 'output_buffer' in locals():
+        if st.button("Play Processed"):
+            st.audio(output_buffer, format='audio/wav', start_time=0)
 
     # Botões de controle de reprodução para o áudio processado
     if 'output_buffer' in locals():
